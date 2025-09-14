@@ -76,7 +76,15 @@ POSTING_SCHEDULE=09:00,15:00,21:00
 
 ### 3. 실행
 
-#### 방법 1: 자동 실행 스크립트 사용 (권장)
+#### 방법 1: 통합 대시보드 실행 (권장) 🌟
+```bash
+# 백엔드 + 프론트엔드 동시 실행
+python run_dashboard.py
+```
+- **접속**: http://localhost:3000 (대시보드)
+- **API**: http://localhost:8000 (백엔드)
+
+#### 방법 2: 기존 자동화 프로그램만 실행
 ```bash
 # Windows
 run.bat
@@ -84,25 +92,24 @@ run.bat
 # Unix/Linux/macOS
 ./run.sh
 ```
+- **용도**: 자동화 프로그램만 실행 (대시보드 없음)
 
-#### 방법 2: 가상환경 수동 활성화 후 실행
+#### 방법 3: 개별 실행 (개발/디버깅용)
 ```bash
-# 가상환경 활성화
-# Windows
-venv_activate.bat
+# 백엔드만 실행
+python run_backend.py
 
-# Unix/Linux/macOS
-./venv_activate.sh
-
-# 또는 수동으로
-# Windows
-venv\Scripts\activate
-# Unix/Linux/macOS
-source venv/bin/activate
-
-# 프로그램 실행
-python main.py
+# 프론트엔드만 실행 (별도 터미널)
+python run_frontend.py
 ```
+
+### 4. 접속 주소
+
+- **대시보드**: http://localhost:3000
+- **API 서버**: http://localhost:8000
+- **API 문서**: http://localhost:8000/docs
+
+> 📋 **자세한 실행 방법**: [EXECUTION_GUIDE.md](EXECUTION_GUIDE.md) 참조
 
 ## 📋 API 키 설정 가이드
 

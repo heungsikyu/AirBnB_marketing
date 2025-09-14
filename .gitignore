@@ -39,14 +39,25 @@ config.env
 *.log
 logs/
 
-# 생성된 이미지
-generated_images/
+# 생성된 이미지 (내용은 제외하되 디렉토리는 유지)
+generated_images/*
+!generated_images/.gitkeep
 
-# 리포트
-reports/
+# 리포트 (내용은 제외하되 디렉토리는 유지)
+reports/*
+!reports/.gitkeep
 
-# 데이터 파일
-data/
+# 데이터 파일 (내용은 제외하되 디렉토리는 유지)
+data/*
+!data/.gitkeep
+
+# 프론트엔드 빌드 결과
+frontend/dist/
+frontend/node_modules/
+
+# 백엔드 정적 파일
+backend/static/*
+!backend/static/.gitkeep
 
 # IDE
 .vscode/

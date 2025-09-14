@@ -20,7 +20,7 @@ from instagram_private_api import Client
 import google.auth
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
-from wordpress_api import WordPressAPI
+# from wordpress_api import WordPress  # 임시로 주석 처리
 
 logger = logging.getLogger(__name__)
 

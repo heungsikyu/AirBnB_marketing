@@ -1,3 +1,8 @@
+# ===========================================
+# Airbnb Marketing Automation - 통합 의존성
+# ===========================================
+
+# === 핵심 자동화 모듈 ===
 requests>=2.31.0
 python-dotenv>=1.0.0
 Pillow>=10.0.0
@@ -10,6 +15,30 @@ pandas>=2.0.0
 numpy>=1.24.0
 matplotlib>=3.7.0
 seaborn>=0.12.0
+
+# === 소셜 미디어 API ===
 google-api-python-client>=2.100.0
 google-auth-httplib2>=0.1.0
 google-auth-oauthlib>=1.1.0
+instagram-private-api>=1.6.0
+wordpress-api>=1.0.0
+
+# === 백엔드 API 서버 ===
+fastapi>=0.104.1
+uvicorn[standard]>=0.24.0
+websockets>=12.0
+python-multipart>=0.0.6
+jinja2>=3.1.2
+python-socketio>=5.10.0
+eventlet>=0.33.3
+
+# === 시스템 모니터링 ===
+psutil>=5.9.0
+
+# === 데이터베이스 ===
+# sqlite3는 Python 내장 모듈이므로 별도 설치 불필요
+
+# === 개발 도구 ===
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
