@@ -4,16 +4,19 @@
 
 @layer base {
   * {
-    @apply border-gray-200;
+    @apply border-gray-200 dark:border-gray-700;
   }
   body {
-    @apply bg-gray-50 text-gray-900;
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+  }
+  html {
+    @apply dark:bg-gray-900;
   }
 }
 
 @layer components {
   .card {
-    @apply rounded-lg border border-gray-200 bg-white text-gray-900 shadow-sm;
+    @apply rounded-lg border border-transparent bg-white text-gray-900 shadow-sm dark:border-transparent dark:bg-gray-800 dark:text-gray-100;
   }
   
   .card-header {
@@ -45,7 +48,7 @@
   }
   
   .btn-outline {
-    @apply border border-gray-300 bg-white hover:bg-gray-50 hover:text-gray-900;
+    @apply border border-gray-300 bg-white hover:bg-gray-50 hover:text-gray-900 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700;
   }
   
   .btn-sm {

@@ -136,10 +136,10 @@ const Notifications: React.FC = () => {
       {/* 헤더 */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">알림</h1>
-          <p className="mt-2 text-gray-600">
-            시스템 알림과 활동 내역을 확인하세요
-          </p>
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">알림</h1>
+        <p className="mt-2 text-gray-600 dark:text-gray-400">
+          시스템 알림과 활동 내역을 확인하세요
+        </p>
         </div>
         <div className="flex items-center space-x-2">
           {unreadCount > 0 && (
@@ -164,7 +164,7 @@ const Notifications: React.FC = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <Filter className="h-4 w-4 text-gray-500" />
-              <span className="text-sm font-medium text-gray-700">필터:</span>
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">필터:</span>
             </div>
             <div className="flex space-x-2">
               {[
@@ -203,8 +203,8 @@ const Notifications: React.FC = () => {
         ) : (
           <div className="text-center py-12">
             <Bell className="mx-auto h-12 w-12 text-gray-400" />
-            <h3 className="mt-2 text-sm font-medium text-gray-900">알림이 없습니다</h3>
-            <p className="mt-1 text-sm text-gray-500">
+            <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-gray-100">알림이 없습니다</h3>
+            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
               {filter === 'unread' 
                 ? '읽지 않은 알림이 없습니다.'
                 : '알림이 없습니다.'

@@ -167,8 +167,8 @@ const Properties: React.FC = () => {
     <div className="space-y-6">
       {/* 헤더 */}
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">숙소 관리</h1>
-        <p className="mt-2 text-gray-600">
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">숙소 관리</h1>
+        <p className="mt-2 text-gray-600 dark:text-gray-400">
           등록된 숙소를 관리하고 상태를 제어하세요
         </p>
       </div>
@@ -178,7 +178,7 @@ const Properties: React.FC = () => {
         <div className="card-content p-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 검색
               </label>
               <div className="relative">
@@ -188,19 +188,19 @@ const Properties: React.FC = () => {
                   placeholder="숙소명, 도시 검색..."
                   value={filters.search}
                   onChange={(e) => setFilters({...filters, search: e.target.value})}
-                  className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full pl-10 pr-3 py-2 border border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent dark:border-transparent dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400"
                 />
               </div>
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 도시
               </label>
               <select
                 value={filters.city}
                 onChange={(e) => setFilters({...filters, city: e.target.value})}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-3 py-2 border border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent dark:border-transparent dark:bg-gray-700 dark:text-gray-100"
               >
                 <option value="">모든 도시</option>
                 {cities.map(city => (
@@ -210,13 +210,13 @@ const Properties: React.FC = () => {
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 상태
               </label>
               <select
                 value={filters.status}
                 onChange={(e) => setFilters({...filters, status: e.target.value})}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-3 py-2 border border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent dark:border-transparent dark:bg-gray-700 dark:text-gray-100"
               >
                 <option value="all">모든 상태</option>
                 <option value="active">활성</option>
@@ -229,7 +229,7 @@ const Properties: React.FC = () => {
                 onClick={fetchProperties}
                 className="w-full btn btn-primary"
               >
-                <Filter className="h-4 w-4 mr-2" />
+                <Filter className="h-10 w-4 mr-2" />
                 필터 적용
               </button>
             </div>
@@ -250,8 +250,8 @@ const Properties: React.FC = () => {
         ) : (
           <div className="text-center py-12">
             <Building2 className="mx-auto h-12 w-12 text-gray-400" />
-            <h3 className="mt-2 text-sm font-medium text-gray-900">숙소가 없습니다</h3>
-            <p className="mt-1 text-sm text-gray-500">
+            <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-gray-100">숙소가 없습니다</h3>
+            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
               검색 조건에 맞는 숙소를 찾을 수 없습니다.
             </p>
           </div>
@@ -261,24 +261,24 @@ const Properties: React.FC = () => {
       {/* 페이지네이션 */}
       {pagination.pages > 1 && (
         <div className="flex items-center justify-between">
-          <div className="text-sm text-gray-700">
+          <div className="text-sm text-gray-700 dark:text-gray-300">
             총 {pagination.total}개 중 {((pagination.page - 1) * pagination.limit) + 1}-{Math.min(pagination.page * pagination.limit, pagination.total)}개 표시
           </div>
           <div className="flex space-x-2">
             <button
               onClick={() => setPagination({...pagination, page: pagination.page - 1})}
               disabled={pagination.page === 1}
-              className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-transparent rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed dark:bg-gray-800 dark:border-transparent dark:text-gray-300 dark:hover:bg-gray-700"
             >
               이전
             </button>
-            <span className="px-3 py-2 text-sm font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md">
+            <span className="px-3 py-2 text-sm font-medium text-gray-700 bg-gray-100 border border-transparent rounded-md dark:bg-gray-700 dark:border-transparent dark:text-gray-300">
               {pagination.page} / {pagination.pages}
             </span>
             <button
               onClick={() => setPagination({...pagination, page: pagination.page + 1})}
               disabled={pagination.page === pagination.pages}
-              className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-transparent rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed dark:bg-gray-800 dark:border-transparent dark:text-gray-300 dark:hover:bg-gray-700"
             >
               다음
             </button>
